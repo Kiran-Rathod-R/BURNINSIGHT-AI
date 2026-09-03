@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & Virtualenvs
+venv/
+env/
+ENV/
+.venv/
+
+# Node dependencies & Vite build
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+sih_burnin.db
+
+# Logs & temporary files
+*.log
+.system_generated/
+scratch/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE & Config
+.vscode/
+.idea/
+.env

@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: sih26170_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: sih_burnin
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: sih26170_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - USE_MYSQL=true
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_DB=sih_burnin
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sih26170_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:

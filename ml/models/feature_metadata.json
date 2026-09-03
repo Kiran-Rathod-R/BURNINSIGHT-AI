@@ -1,0 +1,42 @@
+{
+    "best_prediction_model": "Random Forest",
+    "metrics": {
+        "Linear Regression": {
+            "mae": 1.4454,
+            "rmse": 3.5187,
+            "r2": 0.9915
+        },
+        "Random Forest": {
+            "mae": 1.0931,
+            "rmse": 3.1219,
+            "r2": 0.9933
+        },
+        "XGBoost": {
+            "mae": 1.3598,
+            "rmse": 3.9855,
+            "r2": 0.9891
+        }
+    },
+    "anomaly_contamination": 0.08,
+    "feature_columns": [
+        "leakage_current_0h",
+        "leakage_current_24h",
+        "leakage_current_96h",
+        "voltage_0h",
+        "voltage_24h",
+        "voltage_96h",
+        "current_0h",
+        "current_24h",
+        "current_96h",
+        "drift_0_24",
+        "drift_24_96",
+        "total_drift_0_96",
+        "rate_0_24",
+        "rate_24_96",
+        "degrade_acceleration",
+        "lot_z_score_0h",
+        "lot_z_score_96h",
+        "dist_from_lot_mean_0h"
+    ],
+    "trained_timestamp": "2026-09-03T22:07:48.920076"
+}
